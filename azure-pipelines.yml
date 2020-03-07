@@ -15,13 +15,14 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
-- script: |
-    npm install -g @angular/cli
-    npm install
-    displayName: 'Install Dependencies and npm install'
+- script: npm install -g @angular/cli
+  displayName: 'Install Dependencies'
 
-- script: ng build --prod
-  displayName: 'build'
+- script: npm install
+  displayName: 'Install'
+
+- script: npx ng build --prod
+  displayName: 'Build'
 
 - script: npx ng test --watch=false
   displayName: 'Tests'  
