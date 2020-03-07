@@ -4,7 +4,7 @@ import {ProfileComponent} from './profile/profile.component';
 
 
 const routes: Routes = [
-  {path: 'upload', component: ProfileComponent}
+  {path: '', component: ProfileComponent}
 ];
 
 @NgModule({

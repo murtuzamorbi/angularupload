@@ -8,8 +8,8 @@ import {pipe} from 'rxjs';
 })
 export class UploadService {
 
+   SERVER_URL = 'http://localhost:8083';
   // SERVER_URL = 'https://springappmisc.azurewebsites.net';
-  SERVER_URL = 'https://springappmisc.azurewebsites.net';
   constructor(private httpClient: HttpClient) { }
 
   public upload(data) {
