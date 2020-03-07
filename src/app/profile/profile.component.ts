@@ -12,7 +12,7 @@ export class ProfileComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private uploadService: UploadService) { }
 
   form: FormGroup;
-  error: string;
+  error: any;
   userId = 1;
   uploadResponse = {status: '', message: '', filePath: ''};
 
