@@ -18,6 +18,10 @@ steps:
 - script: |
     npm install -g @angular/cli
     npm install
-    ng config -g cli.warnings.versionMismatch false
-    ng build --prod
-  displayName: 'npm install and build'
+    displayName: 'Install Dependencies and npm install'
+
+- script: ng build --prod
+  displayName: 'build'
+
+- script: npx ng test --watch=false
+  displayName: 'Tests'  
