@@ -31,4 +31,5 @@ steps:
   inputs:
     testResultsFormat: 'JUnit'
     testResultsFiles: '**/TEST-*.xml'
+    searchFolder: '$(Build.ArtifactStagingDirectory)/**/*.xml'
   displayName: 'Publish Test Results'  
