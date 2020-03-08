@@ -33,3 +33,9 @@ steps:
     testResultsFiles: '**/TEST-*.xml'
     searchFolder: '$(Build.ArtifactStagingDirectory)/**/*.xml'
   displayName: 'Publish Test Results'  
+- task: PublishCodeCoverageResults@1
+  condition: succededOrFailed()
+  inputs:
+    codeCoverageTool: 'Cobertura'
+    summaryFileLocation: '$(Build.SourcesDirectory)/coverage/ng-azure-devops/cobertura-coverage.xml'
+  displayName: 'Publish Test Coverage'  
