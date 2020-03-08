@@ -24,7 +24,10 @@ steps:
 - script: npx ng build --prod
   displayName: 'Build'
 
-- script: npx ng test --watch=false
+- script: npx ng lint
+  displayName: 'Linting' 
+
+- script: npx ng test --watch=false --codeCoverage=true
   displayName: 'Tests'  
 - task: PublishTestResults@2
   condition: succeededOrFailed()
