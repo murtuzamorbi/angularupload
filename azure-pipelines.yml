@@ -40,5 +40,5 @@ steps:
   condition: succeededOrFailed()
   inputs:
     codeCoverageTool: 'Cobertura'
-    summaryFileLocation: '$(Build.SourcesDirectory)/coverage/ng-azure-devops/cobertura-coverage.xml'
+    summaryFileLocation: '$(Build.SourcesDirectory)/coverage/angularupload/cobertura-coverage.xml'
   displayName: 'Publish Test Coverage'  
