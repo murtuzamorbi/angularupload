@@ -33,12 +33,25 @@ steps:
   condition: succeededOrFailed()
   inputs:
     testResultsFormat: 'JUnit'
-    testResultsFiles: '**/TEST-*.xml'
-    searchFolder: '$(Build.ArtifactStagingDirectory)/**/*.xml'
+    testResultsFiles: '**/TESTS-*.xml'
   displayName: 'Publish Test Results'  
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      
+      echo 'Hello world'
+      ls -ltra
 - task: PublishCodeCoverageResults@1
   condition: succeededOrFailed()
   inputs:
     codeCoverageTool: 'Cobertura'
     summaryFileLocation: '$(Build.SourcesDirectory)/coverage/angularupload/cobertura-coverage.xml'
   displayName: 'Publish Test Coverage'  
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: 'dist/angularupload'
+    ArtifactName: 'webapp'
+    publishLocation: 'Container'
+  displayName: 'Publish Artifacts'   
